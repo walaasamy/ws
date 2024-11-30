@@ -1,0 +1,583 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+:root {
+    --main-color: #d3ad7f;
+    --black: #13131a;
+    --bg: #010103;
+    --border: 1rem solid rgba(255, 255, 255, .3);
+}
+
+* {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 70px;
+    
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    
+        
+    
+     
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+
+html {
+    font-size: 62.5%;
+    overflow:auto;
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+
+    
+}
+
+body {
+    background: var(--bg);
+    padding-top: 12rem;
+}
+
+.header {
+    background: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.3rem 3%;
+    border-bottom: var(--border);
+    position: fixed;
+    top: 0;
+   left: 0;
+    right: 0; 
+   z-index: 1000;
+}
+
+.navbar a {
+    margin: 0 1rem;
+    font-size: 2.6rem;
+    color: #fff;
+}
+
+.navbar a:hover {
+    color: var(--main-color);
+    border-bottom: .1rem solid var(--main-color);
+    padding-bottom: .5rem;
+}
+
+.icons div {
+    color: #fff;
+    cursor: pointer;
+    font-size: 2.5rem;
+    margin-left: 2rem;
+}
+
+.search-form {
+    position: absolute;
+    top: 115%;
+    right: 7%;
+    background: #fff;
+    width: 50rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    transform: scaleY(0);
+    transform-origin: top;
+}
+
+.search-form input {
+    height: 100%;
+    width: 100%;
+    font-size: 1.6rem;
+    color: var(--black);
+    padding: 1rem;
+    text-transform: none;
+}
+.search-form label{
+    cursor: pointer;
+    font-size: 2.2rem;
+    margin-right: 1.5rem;
+    color:var(--black);
+}
+.search-form label:hover{
+    color: var(--main-color);
+}
+.cart-items-contain {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    height: calc(100vh - 9.5rem);
+    width: 35rem;
+    background: #fff;
+    padding: 0 1.5rem;
+    transform: translateX(100%);
+    transition: 0.3s ease;
+}
+
+.cart-item{
+    position: relative;
+    margin: 2rem 0;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+.fa-times{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--black);
+}
+.fa-times:hover{
+    color: var(--main-color);
+}
+.cart-item img{
+    height: 7rem;
+}
+.content h3{
+    font-size: 2rem;
+    color: var(--black);
+    padding-bottom: .5rem;
+}
+.price{
+    font-size: 1.5rem;
+    color: var(--main-color);
+}
+section{
+    padding: 2rem 7%;
+}
+.heading{
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    padding-bottom: 3.5rem;
+    font-size: 4rem;
+}
+#l1{
+    color: var(--main-color);
+    text-transform: uppercase;
+}
+.btn {
+    width: 100%;
+    background: #eb8b17;
+    font-size: 2rem;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    border: 5px solid rgba(7, 7, 7, 0.5); /* حدود شفافة */
+    border-radius: 20px; /* زوايا منحنية */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* ظل خفيف */
+    padding: 10px 20px; /* مسافة داخلية */
+    transition: all 0.3s ease; /* انتقال سلس */
+}
+
+/* تأثير عند تمرير المؤشر فوق الزر */
+.btn:hover {
+    background: #d47514; /* تغيير اللون */
+    transform: translate(10px, -5px); /* يتحرك إلى اليمين وأعلى قليلاً */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* زيادة الظل */
+}
+
+
+
+.cart-items-contain.active {
+    transform: translateX(0);
+}
+
+.search-form.active {
+    transform: scaleY(1);
+}
+
+
+@media(max-width: 991px) {
+    #menu-btn {
+        display: inline-block;
+    }
+    .navbar {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background: #fff;
+        width: 30rem;
+        height: calc(100vh - 9.5rem);
+        transition: 0.3s ease;
+    }
+    section{
+        padding: 2rem 7%;
+    }
+    .navbar.active {
+        right: 0;
+    }
+.home{
+    background-position: left;
+    justify-content: center;
+}
+.content h3{
+    font-size: 4.5rem;
+}
+.content p{
+    font-size: 1.5rem;
+}
+
+
+    .navbar a {
+        color: var(--black);
+        display: block;
+        margin: 1.5rem;
+        padding: .5rem;
+        font-size: 2rem;
+    }
+}
+.home{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+   background: url(./z5.jpg) no-repeat ; 
+   background-size: cover;
+    background-position: center; 
+}
+.contant{
+    max-width: 60rem;
+}
+.contant h3{
+    font-size: 7rem;
+    text-transform: uppercase;
+    color: #fff;
+}
+.contant p{
+    font-size: 3rem;
+    font-weight: lighter;
+    line-height: 2.8;
+    padding: 2rem 0;
+    color: #fffcfc;
+}
+.row{
+    display: flex;
+    align-items: center;
+    background: var(--black);
+    flex-wrap: wrap;
+}
+.image{
+    flex:1 1 45rem;
+}
+.image img{
+    width: 100%;
+}
+.contant{
+    flex: 1 1 45rem;
+    padding: 2rem;
+}
+.contant h3{
+    font-size: 3rem;
+    color: #fff;
+}
+.contant p{
+    font-size: 2.6rem;
+    color: #ebe8e8;
+    padding: 1rem 0;
+    line-height: 1.8;
+}
+.box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(30rem,1fr));
+    gap: 3.5rem;
+}
+.box{
+    padding: 5rem;
+    text-align: center;
+    border: var(--border);
+}
+
+
+.box img{
+    height: 15rem;
+}
+.box h3{
+    color: #fff;
+    font-size: 2rem;
+    padding: 1rem 0;
+}
+.price{
+    color: #fff;
+    font-size: 2.5rem;
+    padding: .5rem 0;
+}
+.price span{
+    
+    font-size: 1.5rem;
+    text-decoration:line-through ;
+}
+.box:hover{
+    background: #fff;
+}
+.box:hover>*{
+    color: var(--black);
+}
+
+ .box-container2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* توزيع الصناديق بالتساوي */
+    gap: 1.5rem; /* مسافة بين الصناديق */
+}
+
+.box2 {
+    background: var(--bg);
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+ .icons {
+    display: flex;
+    justify-content: center; /* توسيط الأيقونات أفقياً */
+    gap: 1rem; /* مسافة بين الصناديق */
+    margin-bottom: 1rem;
+}
+
+ .icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px; /* عرض الصندوق */
+    height: 50px; /* ارتفاع الصندوق */
+    font-size: 2rem; /* حجم الأيقونات */
+    color: #333;
+    background-color: #f7f7f7; /* لون خلفية الصندوق */
+    border: 1px solid #ddd; /* حدود الصندوق */
+    border-radius: 50%; /* جعل الصندوق دائري */
+    transition: 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* تأثير الظل */
+}
+
+ .icons a:hover {
+    background-color: #f39c12; /* تغيير لون الخلفية عند التحويم */
+    color: #0e0d0d; /* تغيير لون الأيقونة عند التحويم */
+    transform: scale(1.1); /* تكبير الصندوق قليلاً */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+ .image img {
+    width: 100%; /* تملأ عرض الحاوية */
+    height: 325px; /* ارتفاع ثابت */
+    object-fit: cover; /* تغطي الصورة الإطار بدون تشويه */
+    border-radius: 0.5rem;
+}
+
+
+.products .contact .stars i {
+    color: #f39c12;
+}
+.name1{
+    color: #cac5c5;
+    font-size: 2.5rem;
+    text-align: center;
+    transition: .5s;
+}
+
+/* حاوية الصورة */
+.image1 {
+    width: 300px; /* تحديد عرض ثابت للصورة */
+    height: 300px; /* تحديد ارتفاع ثابت للصورة */
+    overflow: hidden; /* لإخفاء أي جزء من الصورة يتجاوز الإطار الدائري */
+    border-radius: 50%; /* جعل الصورة دائرية */
+    border: 2px solid gold; /* إضافة إطار ذهبي */
+    transition: border-color 0.3s ease; /* إضافة تأثير سلس عند التغيير */
+    display: flex; /* استخدام flexbox لجعل الصورة في المنتصف */
+    justify-content: center; /* محاذاة الصورة أفقياً في المنتصف */
+    align-items: center;
+   margin: 12px;
+    padding: 2px;
+    /* محاذاة الصورة عمودياً في المنتصف */
+}
+
+/* صورة داخل الحاوية */
+.image1 img {
+    width: 100%; /* تملأ عرض الحاوية */
+    height: 100%; /* تملأ ارتفاع الحاوية */
+    object-fit: cover;
+    
+    
+}
+
+/* تغيير الإطار عند مرور الماوس */
+.image1:hover {
+    border-color: rgb(243, 124, 13); /* تغيير الإطار للون البرتقالي عند تمرير الماوس */
+}
+.contant h3{
+color: #fff;
+font-size: 2.5rem;
+}
+.stars{
+    padding: 1.5rem;
+}
+.stars i{
+    font-size: 1.7rem;
+    color: var(--main-color);
+}
+.row{
+    display: flex;
+  
+    background: var(--black);
+    flex-wrap: wrap;
+    gap:1rem;
+}
+.map{
+    float:1 1 45rem;
+    width: 100%;
+    object-fit: cover;
+}
+.row form{
+    flex:1 1 45rem;
+    padding: 5rem 2rem;
+    text-align: center;
+}
+.row h3{
+    text-transform: uppercase;
+    font-size: 3.5rem;
+    color: #eee;
+}
+.inputbox{
+
+align-items: center;
+margin-top: 2rem;
+margin-bottom: 2rem;
+background: var(--black);
+border: var(--border);
+}
+.inputbox span{
+    color: #eee;
+    font-size: 2rem;
+    padding-left: 2rem;
+}
+.inputbox input{
+    width: 100%;
+    padding: 2rem;
+    font-size: 1.7rem;
+    color: #eee;
+    text-transform: none;
+  
+}
+
+/* تنظيم الصناديق */
+.blog {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 2rem;
+  }
+  
+  .box3 {
+    width: 30%;
+    text-align: center;
+    background: none;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+ 
+  .l1{
+    color: orange;
+    font-size: 3.8rem;
+    margin-top: 1rem;
+  }
+  h3 {
+    color: orange;
+    font-size: 3.8rem;
+    margin-top: 1rem;
+  }
+  h2{
+    color: #ccc;
+  }
+  p {
+    font-size: 2.5rem;
+    margin-top: 2.5rem;
+    color: #eee;
+  }
+  
+ 
+  
+  button:hover {
+    background-color: darkorange;
+  }
+  
+ /* تنسيق الفوتر */
+footer {
+    background-color:var(--black);
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .social-media {
+    display: flex; /* استخدام Flexbox لترتيب الأيقونات بشكل أفقي */
+    justify-content: center; /* محاذاة الأيقونات في المنتصف */
+    align-items: center; /* محاذاة الأيقونات عموديًا في المركز */
+    margin-bottom: 1rem;
+  }
+  
+  .social-icon {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    margin: 0 10px;
+    background-color: #555;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(5, 5, 5);
+    font-size: 20px;
+    transition: all 0.3s;
+  }
+  
+  .social-icon i {
+    font-size: 25px;
+  }
+  
+  .social-icon:hover {
+    background-color: #f2a900; /* تغيير اللون عند المرور */
+    border: 2px solid orange; /* تغيير الحد عند المرور بالماوس */
+  }
+  
+  footer p {
+    color: #eee;
+    margin-top: 10px;
+    font-size: 3rem;
+  }
+   .image2{
+
+   width: 350PX; /* تحديد عرض ثابت للصورة */
+    height: 350px; /* تحديد ارتفاع ثابت للصورة */
+    overflow: hidden; /* لإخفاء أي جزء من الصورة يتجاوز الإطار الدائري */
+   border-radius:12PX ; 
+   
+   margin: 12px;
+    padding: 2px;
+    /* محاذاة الصورة عمودياً في المنتصف */
+}
+
+/* صورة داخل الحاوية */
+.image2 img {
+    width: 100%; /* تملأ عرض الحاوية */
+    height: 100%; /* تملأ ارتفاع الحاوية */
+    object-fit: cover}
+
+    .box1:hover{
+        background: #464444;
+    }
+    .box1:hover>*{
+        color: var(--black);
+        
+    }
+    
+    .box2:hover{
+        background: #272626;
+      
+    }
+    .box2:hover>*{
+        color: var(--black);
+    }
